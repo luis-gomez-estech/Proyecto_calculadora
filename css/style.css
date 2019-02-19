@@ -1,0 +1,326 @@
+body {
+  background: #111 !important;
+  background-image: url(../imagenes/fondo_calculator1.jpg);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.container {
+    max-width:520px !important;
+    margin:20px auto 10px;
+
+}
+
+p {
+  color: #fff;
+}
+
+.fondo {
+
+  background-image: url(../imagenes/fondo1.jpg);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 15px 8px 8px 8px;
+  border: 2px solid #fff;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.fondo_activado {
+  background-image: url(../imagenes/fondo1.jpg);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 15px 8px 8px 8px;
+  border: 2px solid #00fff3 !important;
+  border-radius: 20px;
+  text-align: center;
+ }
+
+ /* Pantalla LCD */
+
+#pantalla {
+  width: 280px !important;
+  margin:20px auto 10px !important; 
+  height:80px;
+  color:#c0c0c0;
+  text-align: right;
+  font-size: 34px;
+  letter-spacing: 2px;
+  border-radius:7px;
+  box-shadow:inset rgba(0,0,0,9) 1px 1px 14px;    
+  background: #3e3e3e;
+}
+
+/* Pantalla cuando se pulsa el boton on-off*/
+.pantalla_activada {
+  background-color: #00fff3 !important;
+  color: #000 !important;
+}
+
+/* botones numericos */
+.btn {
+  width: 50px;
+  height:50px;
+  margin: 2px;
+  color:#c0c0c0 !important;
+  font-size: 14px !important;
+  background:#111 !important ;
+  font-family: "Myriad Pro", Arial, sans-serif;
+  border: #000 1px solid !important;
+  border-radius:150px !important;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* botones numericos cuando esta encendida la calculadora */
+.btn_activado {
+  width: 50px;
+  height:50px;
+  margin: 2px;
+  color:#c0c0c0 !important;
+  background:#000 !important;
+  font-family: "Myriad Pro", Arial, sans-serif;
+  border: #fff 1px solid !important;
+  border-radius:150px !important;
+  text-align: center;
+  cursor: pointer;
+
+}
+
+/* botones numeros al hacer hover */
+.btn_activado:hover {
+  color:  #d87501  !important;
+  background:#011 !important;
+  
+}
+
+
+/* boton de borrar al encender */
+.btnce_activado {
+  width: 50px;
+  height:50px;
+  margin: 2px;
+  color:red !important;
+  font-weight: bold;
+  background: #111  ;
+  font-family: "Myriad Pro", Arial, sans-serif;
+  font-size: 12px;
+  border: red 1px solid !important;
+  border-radius:150px !important;
+
+}
+
+/* boton de retroceso al encender */
+.btndel_activado {
+  width: 50px;
+  height:50px;
+  margin: 2px;
+  color: #d87501 !important;
+  background: #111  ;
+  font-size: 12px;
+  font-family: "Myriad Pro", Arial, sans-serif;
+  border: #d87501 1px solid !important;
+  border-radius:150px !important;
+
+}
+
+/* boton de igual al encender */
+.btnigual_activado {
+  width: 50px;
+  height:50px;
+  margin: 2px;
+  color: green !important;
+  background: #111  ;
+  font-size: 20px;
+  font-family: "Myriad Pro", Arial, sans-serif;
+  border: green 1px solid !important;
+  border-radius:150px !important;
+
+}
+
+/* Boton on-off*/
+.boton_on_off {
+  width: 50px;
+  height:50px;
+  margin-top: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* botones toggle de calculadora avanzada y conversor*/
+.botones_toggle_calculadora_avanzada_y_conversor {
+  font-family: "Myriad Pro", Arial, sans-serif;
+  width: 50px;
+  height:50px;
+  margin: 2px;
+  color:#000 !important;
+  font-size:14px !important;
+  background: #666 !important;
+  border: #000 1px solid !important;
+  border-radius:150px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* botones toggle al hacer hover*/
+.botones_toggle_calculadora_avanzada_y_conversor:hover {
+  color: #000 !important;
+  background-color: #c8a80f !important;
+}
+
+/* botones toogle activados*/
+.botones_toggle_calculadora_avanzada_y_conversor_activados {
+
+  font-family: "Myriad Pro", Arial, sans-serif;
+  width: 50px;
+  height:50px;
+  margin: 2px;
+  color:#000 !important;
+  font-size:14px !important;
+  background-color: #c8a80f !important;
+  border: #000 1px solid !important;
+  border-radius:150px;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* bloque calculadora avanzada*/
+.calculadora_avanzada {
+  display: none;
+  text-align: center;
+  margin: 0px 0px 10px 0px;
+  padding: 2px;
+}
+
+
+/* Estilo de todos los botones de la opcion Conversor */
+.botones_calculadora_avanzada_y_conversor_tipo1 {
+  text-align: center !important;
+  width: 40px;
+  height:40px;
+  color:  #f2790e !important;
+  background:#222 !important;
+  border: #fff 1px solid !important;
+  border-radius: 150px !important;
+  font-size: 10px !important;
+}
+
+
+/* Estilo de todos los botones de la opcion Avanzada */
+.botones_calculadora_avanzada_y_conversor_tipo2 {
+  text-align: center !important;
+  width: 50px;
+  height:50px;
+  color:  #f2790e !important;
+  background:#222 !important;
+  border: #fff 1px solid !important;
+  border-radius: 150px !important;
+  font-size: 10px !important;
+}
+
+/* Bloque conversor*/
+#cal_conversor {
+position: fixed;
+background-color: #111;
+width: 235px;
+height: auto;
+padding: 5px;
+color: black;
+border: 1px solid #fff !important;
+border-radius: 15px !important;
+display: none;
+
+}
+
+/* titulo bloque conversor*/
+.titulo_divisa_y_cambio_base {
+  font-size: 12px;
+  color: orange;
+  background: #444;
+  border: 1px solid #000;
+  border-radius: 150px;
+
+  margin: 10px 10px 10px 10px; 
+
+}
+
+label {
+  color: #fff;
+  font-size: 10px;
+}
+
+hr {
+  background: #fff;
+}
+
+.btn_calcular_divisa {
+  width: 100px;
+  height:30px;
+  margin-top: 10px !important;
+  margin: 2px;
+  color:#c0c0c0 !important;
+  font-size: 14px !important;
+  background:#111 !important ;
+  font-family: "Myriad Pro", Arial, sans-serif;
+  border: #fff 1px solid !important;
+  border-radius:5px !important;
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn_limpiar_divisa {
+  width: 100px;
+  height:30px;
+  margin: 2px;
+  color:#c0c0c0 !important;
+  font-size: 14px !important;
+  background:#111 !important ;
+  font-family: "Myriad Pro", Arial, sans-serif;
+  border: #fff 1px solid !important;
+  border-radius:5px !important;
+  text-align: center;
+  cursor: pointer;
+}
+
+
+
+.btn_calcular_conversor {
+  width: 100px;
+  height:30px;
+  margin-top: 15px !important;
+  margin-bottom: 15px !important;
+  color:#c0c0c0 !important;
+  font-size: 14px !important;
+  background:#111 !important ;
+  font-family: "Myriad Pro", Arial, sans-serif;
+  border: #fff 1px solid !important;
+  border-radius:5px !important;
+  text-align: center;
+  cursor: pointer;
+}
+
+.botonera_secundaria {
+  display: none;
+}
+
+/* botones numericos conversor hexadecimal */
+.btn_botonera_secundaria {
+  width: 22px;
+  height:22px;
+  margin: 2px;
+  color:#c0c0c0 !important;
+  font-size: 10px !important;
+  background:#111 !important ;
+  font-family: "Myriad Pro", Arial, sans-serif;
+  border: #444 1px solid !important;
+  border-radius:150px !important;
+  text-align: center;
+ 
+}
+
+
+
