@@ -126,9 +126,9 @@
 									
 								</div>	
 
-						<button type="button" class="btn_calcular_conversor" onclick="calculaConversor()">Calcular</button> <!-- boton calcular que llama al metodo calcular() -->
-												
-	         		</div> <!-- finaliza el bloque para calcular hexadecial-->
+						<button type="button" class="btn_calcular_conversor" onclick="calculaConversor()">Calcular</button>
+
+					</div> <!-- finaliza el bloque para calcular hexadecial-->
 
 	         		<!-- Boton abre calculadora avanzada -->
 					 
@@ -189,7 +189,7 @@
 
 					<!-- Boton de encendido y apagado -->
 
-					<img id="boton_on" class="boton_on_off" alt="" src="imagenes/botonOff.png" onmouseover="this.style.cursor='pointer'" onclick="cambia_imagen(),encender()"/>			
+					<img id="boton_on" class="boton_on_off" alt="" src="imagenes/botonOff.png" onmouseover="style.cursor='pointer'" onclick="cambia_imagen(),encender(),contadorOnOff()"/>			
 
 
 					<br>
@@ -295,8 +295,7 @@
 				document.getElementById('pantalla').value = document.getElementById('pantalla').value;
 			} else {
 			document.getElementById('pantalla').value = eval(document.getElementById('pantalla').value);
-			}
-	
+			}	
 
 		}
 
@@ -344,11 +343,94 @@
 
 					} else if  (opcion1=="euro"&&opcion2=="yenes"){
 						document.getElementById("pantalla").value = (cantidad_divisa * 125.24).toFixed(2) + " Y";
+						muestraConversores('cal_conversor');
+
+					} else if  (opcion1=="libra"&&opcion2=="libra"){
+						document.getElementById("pantalla").value = cantidad_divisa;
 						muestraConversores('cal_conversor');	
+
+					} else if  (opcion1=="libra"&&opcion2=="euro"){
+						document.getElementById("pantalla").value = (cantidad_divisa * 1.16).toFixed(2) + " €";
+						muestraConversores('cal_conversor');	
+
+					} else if  (opcion1=="libra"&&opcion2=="dolar"){
+						document.getElementById("pantalla").value = (cantidad_divisa * 1.32).toFixed(2) + " $";
+						muestraConversores('cal_conversor');	
+
+					} else if  (opcion1=="libra"&&opcion2=="dolarM"){
+						document.getElementById("pantalla").value = (cantidad_divisa * 25.46).toFixed(2) + " $X";
+						muestraConversores('cal_conversor');	
+
+					} else if  (opcion1=="libra"&&opcion2=="yenes"){
+						document.getElementById("pantalla").value = (cantidad_divisa * 147.94).toFixed(2) + " Y";
+						muestraConversores('cal_conversor');	
+
+					} else if  (opcion1=="dolar"&&opcion2=="dolar"){
+						document.getElementById("pantalla").value = cantidad_divisa;
+						muestraConversores('cal_conversor');	
+
+					} else if  (opcion1=="dolar"&&opcion2=="euro"){
+						document.getElementById("pantalla").value = (cantidad_divisa * 0.88).toFixed(2) + " €";
+						muestraConversores('cal_conversor');	
+
+					} else if  (opcion1=="dolar"&&opcion2=="libra"){
+						document.getElementById("pantalla").value = (cantidad_divisa * 0.76).toFixed(2) + " £";
+						muestraConversores('cal_conversor');	
+
+					} else if  (opcion1=="dolar"&&opcion2=="dolarM"){
+						document.getElementById("pantalla").value = (cantidad_divisa * 19.29).toFixed(2) + " $X";
+						muestraConversores('cal_conversor');	
+
+					} else if  (opcion1=="dolar"&&opcion2=="yenes"){
+						document.getElementById("pantalla").value = (cantidad_divisa * 147.98).toFixed(2) + " Y";
+						muestraConversores('cal_conversor');	
+
+					} else if  (opcion1=="dolarM"&&opcion2=="dolarM"){
+						document.getElementById("pantalla").value = cantidad_divisa;
+						muestraConversores('cal_conversor');	
+
+					} else if  (opcion1=="dolarM"&&opcion2=="euro"){
+						document.getElementById("pantalla").value = (cantidad_divisa * 0.046).toFixed(2) + " €";
+						muestraConversores('cal_conversor');	
+
+					} else if  (opcion1=="dolarM"&&opcion2=="libra"){
+						document.getElementById("pantalla").value = (cantidad_divisa * 0.039).toFixed(2) + " £";
+						muestraConversores('cal_conversor');	
+
+					} else if  (opcion1=="dolarM"&&opcion2=="dolar"){
+						document.getElementById("pantalla").value = (cantidad_divisa * 0.05).toFixed(2) + " $";
+						muestraConversores('cal_conversor');	
+
+					} else if  (opcion1=="dolarM"&&opcion2=="yenes"){
+						document.getElementById("pantalla").value = (cantidad_divisa * 5.79).toFixed(2) + " Y";
+						muestraConversores('cal_conversor');	
+
+					} else if  (opcion1=="yenes"&&opcion2=="yenes"){
+						document.getElementById("pantalla").value = cantidad_divisa;
+						muestraConversores('cal_conversor');	
+
+					} else if  (opcion1=="yenes"&&opcion2=="euro"){
+						document.getElementById("pantalla").value = (cantidad_divisa * 0.0079).toFixed(2) + " €";
+						muestraConversores('cal_conversor');	
+
+					} else if  (opcion1=="yenes"&&opcion2=="libra"){
+						document.getElementById("pantalla").value = (cantidad_divisa * 0.0068).toFixed(2) + " £";
+						muestraConversores('cal_conversor');	
+
+					} else if  (opcion1=="yenes"&&opcion2=="dolar"){
+						document.getElementById("pantalla").value = (cantidad_divisa * 0.0089).toFixed(2) + " $";
+						muestraConversores('cal_conversor');	
+
+					} else if  (opcion1=="yenes"&&opcion2=="dolarM"){
+						document.getElementById("pantalla").value = (cantidad_divisa * 0.17).toFixed(2) + " $X";
+						muestraConversores('cal_conversor');	
+
+					} 
+
 				}	
 	    
     		}
-		}
+		
 
 
 		function calculaConversor(){
@@ -517,7 +599,70 @@
 
 		    document.getElementById("btnIgual").classList.toggle("btnigual_activado");
 		    document.getElementById("btnIgual").classList.toggle("btn"); 
+
+		    		
+
+		}
 		
+		//Para desactivar los botones cuando la calculadora esta apagada
+
+		//Creo una variable que inicializo en cero
+		var contador=0;
+		
+		// Ahora cada vez que se pinche sobre el boton on-off, llammamos a este metodo, el cual va a incrementar en uno el valor de la variable contador
+		// cada vez que se pinche sobre la imagen del boton, y con un if, le digo que cuando el contador es un numero par,
+		// los botones estan activos, pero sino es par, entonces estaran estan desactivados
+
+		function contadorOnOff() {
+		  
+		   contador++;
+		     if(contador%2==0){
+		    	document.getElementById("btn1").disabled = false;
+		    	document.getElementById("btn2").disabled = false;
+		    	document.getElementById("btn3").disabled = false;
+		    	document.getElementById("btn4").disabled = false;
+		    	document.getElementById("btn5").disabled = false;
+		    	document.getElementById("btn6").disabled = false;
+		    	document.getElementById("btn7").disabled = false;
+		    	document.getElementById("btn8").disabled = false;
+		    	document.getElementById("btn9").disabled = false;
+		    	document.getElementById("btn0").disabled = false;
+		    	document.getElementById("btnComa").disabled = false;
+		    	document.getElementById("btnSum").disabled = false;
+		    	document.getElementById("btnRest").disabled = false;
+		    	document.getElementById("btnMult").disabled = false;
+		    	document.getElementById("btnDiv").disabled = false;
+		    	document.getElementById("avanzada").disabled = false;
+		    	document.getElementById("boton_conversor").disabled = false;
+		    	document.getElementById("btnIgual").disabled = false;
+		    	document.getElementById("btnDel").disabled = false;
+		    	document.getElementById("btnce").disabled = false;
+		    
+
+		    } else {
+   			    document.getElementById("btn1").disabled = true;
+		    	document.getElementById("btn2").disabled = true;
+		    	document.getElementById("btn3").disabled = true;
+		    	document.getElementById("btn4").disabled = true;
+		    	document.getElementById("btn5").disabled = true;
+		    	document.getElementById("btn6").disabled = true;
+		    	document.getElementById("btn7").disabled = true;
+		    	document.getElementById("btn8").disabled = true;
+		    	document.getElementById("btn9").disabled = true;
+		    	document.getElementById("btn0").disabled = true;
+		    	document.getElementById("btnComa").disabled = true;
+		    	document.getElementById("btnSum").disabled = true;
+		    	document.getElementById("btnRest").disabled = true;
+		    	document.getElementById("btnMult").disabled = true;
+		    	document.getElementById("btnDiv").disabled = true;
+		    	document.getElementById("avanzada").disabled = true;
+		    	document.getElementById("boton_conversor").disabled = true;
+		    	document.getElementById("btnIgual").disabled = true;
+		    	document.getElementById("btnDel").disabled = true;
+		    	document.getElementById("btnce").disabled = true;
+
+		    }
+
 
 		}
 
@@ -531,7 +676,285 @@
 
 		</script>
 
+<!--
 
+	/*
+		// Aqui le he puesto un toFixed para limitar los decimales a 2 (igual tengo que poner a más?? 
+		function euro() {
+			document.getElementById('pantalla').value = document.getElementById('pantalla').value.toFixed(2) + " €";
+		}
+
+		function libra() {
+			document.getElementById('pantalla').value = document.getElementById('pantalla').value * 0.88.toFixed(2) + " £";
+		}
+
+		function dolar() {
+			document.getElementById('pantalla').value = document.getElementById('pantalla').value * 1.13.toFixed(2) + " $";
+		}
+
+		function dolarM() {
+			document.getElementById('pantalla').value = document.getElementById('pantalla').value * 21.82.toFixed(2) + " $X";
+		}
+
+		function yenes() {
+			document.getElementById('pantalla').value = document.getElementById('pantalla').value * 125.24.toFixed(2) + " Y";
+
+		}
+
+		function dolarC() {
+			document.getElementById('pantalla').value = document.getElementById('pantalla').value * 1.5.toFixed(2)  + " $C";
+		}
+
+*/
+/*
+		// Decimal a binario
+
+		function decimalBinario() {
+
+			// Le digo que el valor de la pantalla va a ser el valr de la pantalla convertido a float con parseFloat, y despues con toString y 2 como valor de la base, obtenemos
+			// el numero convertido a Binario. tambien hago una validacion ya que  si le damos a boton HEX sin haber introducido un nuemro en la pantalla,
+			// aparece entonces las siglas NaN (no es un numero), y para evitarlo, le digo que si lo que encuentra con eval en la pantalla es igual a nada,
+			// entonces no pondrá nada sino si que mostrara el resultado
+
+			if (eval(document.getElementById('pantalla').value)==null) {
+
+				document.getElementById('pantalla').value = document.getElementById('pantalla').value;	
+
+			} else {
+
+				document.getElementById('pantalla').value = (parseFloat(document.getElementById('pantalla').value).toString(2));	
+
+			}
+
+		}
+*/
+
+/*		// Decimsl s hexadecimal
+		function decimalHexadecimal() {
+
+				// Le digo que el valor de la pantalla va a ser el valr de la pantalla convertido a float con parseFloat, y despues con toString y 16 como valor de la base, obtenemos
+			// el numero convertido a Hexadecimal, y Valido como he hecho con el binario
+
+			if (eval(document.getElementById('pantalla').value)==null) {
+
+				document.getElementById('pantalla').value = document.getElementById('pantalla').value;	
+			} else {		
+
+			document.getElementById('pantalla').value = (parseFloat(document.getElementById('pantalla').value).toString(16));	
+
+			}	
+					
+		}
+
+*/
+
+
+/*
+		// Hexadecimal a decimal
+
+		function hexadecimalDecimal() {
+				
+
+			var dec = document.getElementById('pantalla').value;
+
+						// Integer outputDecimal = Integer.parseInt(hexString, 16);						
+
+						document.getElementById('pantalla').value = parseInt(dec , 16);
+
+						//(parseFloat(document.getElementById('pantalla').value).toString(16));
+
+					}
+
+*/
+
+	  -->
+
+
+
+
+<!--YA NO LA USO PORQUE LO HAGO DE OTRA FORMA
+
+		// Hace aparecer la calculadora conversor
+		function conversor() {
+		    var show_hide = document.getElementById('cal_conversor'); // aqui creo la variable para asignarla al div cal_conversor
+		    var style = document.getElementById('conversor'); // aqui creo la variable para asignarla al boton C.moneda con id=conversor
+		    if (show_hide.style.display == 'block') {  // Aqui comprobamos cuál es el estado del elemento, si está visible, al hacer click lo ocula y tambien vuelve al estilo inicial 
+		            show_hide.style.display = 'none';
+		            style.classList.remove('botones_toggle_calculadora_avanzada_y_conversor_activados'); //  Cambia el estilo del boton       
+		    }  else { // pero si esta oculto, lo mostrara y aplicara el nuevo estilo para el fondo (en este caso, lo pone de color verde)
+		            show_hide.style.display = 'block';
+		            style.classList.add('botones_toggle_calculadora_avanzada_y_conversor_activados');   
+		        }
+		    }
+-->
+
+
+<!--
+
+
+function calculate(expr) {
+     expr = expr.toUpperCase();
+     var filter = 'ABCDFGHIJKLMNOPQRSTUVWXYZ';
+     for (i=0; i<filter.length; i++) {
+          if (expr.indexOf(filter.charAt(i)) != -1) {
+               document.Calc.Input.value = '';
+               return;
+               }  
+          }
+     document.Calc.Input.value = eval(document.Calc.Input.value);
+     }
+
+
+//Declaracion de variables
+var numero1 = 0; // creo variable que recoge el primer valor
+var numero2 = 0; // creo variable que recoge el segundo valor
+var operacion; // Variable que recoge el valor para que operacion realizar
+
+//cuando se apreta un numero, esta funcion lo recibe.
+
+// La variable numero tiene el valor que le asignamos a cada tecla, para la tecla 1, será 1
+// la variable numero1 recoge el valor 	que haya ne la pantalla, si es igual a cero, o si no hay nada escrito (osea cero tambien), entonces numero1 es igual al valor introducido
+// sino numero1 será igual a numero1+numero
+function asignarNumero(numero){
+    if(document.getElementById("pantalla").value == "0" || numero1==0){
+        numero1 = numero; // La variable numero tiene el valor que le asignamos a cada tecla, para la tecla 1, será 1
+    }else{
+        numero1 += numero;
+    }
+        document.getElementById("pantalla").value = numero1;
+
+}
+
+ function coma(){
+            if(numero1 == 0) {
+                numero1 = '0.';
+            } else if(numero1.indexOf('.') == -1) {
+                numero1 += '.';
+            }
+            document.getElementById("pantalla").value += numero1;
+        }
+
+
+
+//Esta funcion se llama cada vez que se presiona un boton de operacion.
+function operar(valor){
+	if (numero1 == 0){
+		resultado = parseInt(document.getElementById("pantalla").value);
+	}
+	numero2 = parseInt(numero1);
+	numero1= 0;
+	operacion = valor;
+}
+
+function esIgual(){
+    numero1 = parseInt(numero1);
+	switch (operacion){
+		case 1:
+			numero1 += numero2;
+		break;
+		case 2:
+			numero1 = numero2 - numero1;
+		break;
+		case 3:
+			numero1 *= numero2;
+		break;
+		case 4:
+			numero1 = numero2 / numero1;
+		break;
+		case 5:
+			numero1 = Math.pow(numero2, numero1); // aqui calcula numero al cuadrado X^2
+		break;
+	}
+	document.getElementById("pantalla").value = numero1;
+	numero2 = parseInt(numero1);
+}
+
+
+-->
+
+
+
+
+
+<!-- pruebas de script
+
+
+<script>
+
+  var style = document.getElementById("boton_on_off").classList;
+  var style_pantalla = document.getElementById("pantalla").classList;
+
+	function encender() {
+
+
+
+  if (style.contains("botones_toggle_calculadora_avanzada_y_conversor")||style_pantalla.contains("pantalla")) { //AQUI comprueba el la class qe tiene asignada y si es la misma, la sustituye por otra nueva class
+    style.remove("botones_toggle_calculadora_avanzada_y_conversor");
+    style_pantalla.remove("pantalla");
+  } else {
+    style.add("botones_toggle_calculadora_avanzada_y_conversor");
+    style_pantalla.add("pantalla");
+  }
+  if (style.contains("botones_toggle_calculadora_avanzada_y_conversor_activados")||style_pantalla.contains("pantalla_activada1")) {
+    style.remove("botones_toggle_calculadora_avanzada_y_conversor_activados");
+     style_pantalla.remove('pantalla_activada1');
+  } else {
+    style.add("botones_toggle_calculadora_avanzada_y_conversor_activados");
+    style_pantalla.add('pantalla_activada1');
+  }
+}
+
+   
+</script>
+-->
+
+
+
+<!--
+
+<script type="text/javascript">
+// Script to hide/show menu
+var button = document.querySelector('#conversor');
+var menu = document.querySelector('#cal_conversor');
+button.addEventListener('click', function (event) {
+      if (menu.style.display == "") {
+          menu.style.display = "none";
+          button.innerHTML = "Hide C.moneda";
+      } else {
+          menu.style.display = "";
+          button.innerHTML = "Show C.moneda";
+      }
+    }
+  );
+</script>
+
+-->
+
+<!-- PARA USARLO CON LIBRERIA JQUERY
+
+<script>
+$(document).ready(function(){
+  $("#conversor").click(function(){
+    $(".boton_calculadora_conversor").toggleClass("boton_calculadora_conversor_activado");
+  });
+});
+</script>
+
+-->
+
+<!-- PARA USARLO CON LIBRERIA JQUERY
+<script>
+$(document).ready(function(){
+  $("#avanzada").click(function(){
+    $(".calculadora_avanzada").style.fontSize(120);
+  });
+  $("#avanzada").click(function(){
+    $(".calculadora_avanzada").show();
+  });
+});
+</script>
+
+-->
 
 </body>
 </html>
