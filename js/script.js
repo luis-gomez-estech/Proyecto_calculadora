@@ -434,6 +434,7 @@
 		    	document.getElementById("btnIgual").disabled = false;
 		    	document.getElementById("btnDel").disabled = false;
 		    	document.getElementById("btnce").disabled = false;
+		    	document.getElementById("pantalla").disabled = false;
 		    
 
 		    } else {
@@ -457,6 +458,7 @@
 		    	document.getElementById("btnIgual").disabled = true;
 		    	document.getElementById("btnDel").disabled = true;
 		    	document.getElementById("btnce").disabled = true;
+		    	document.getElementById("pantalla").disabled = true;
 
 		    }
 
