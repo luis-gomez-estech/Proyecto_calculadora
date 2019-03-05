@@ -400,8 +400,83 @@
 		    		
 
 		}
-		
+
+	
 		//Para desactivar los botones cuando la calculadora esta apagada
+		// Mismo metodo usado para mostrar la calculadora avanzada
+
+		var flag2 =0; //Aqui creo una variable boolean
+		
+		function booleanOnOff() {
+
+			//Al hacer clicn en el boton on-off, llama a este metedo boolean, si flag2 es 0, entonces lo desactiva
+
+					
+			if (flag2==0){ //Si es 0 lo desactiva
+
+				//document.getElementsByClassName('botones');
+		
+				document.getElementById("btn1").disabled = true;
+		    	document.getElementById("btn2").disabled = true;
+		    	document.getElementById("btn3").disabled = true;
+		    	document.getElementById("btn4").disabled = true;
+		    	document.getElementById("btn5").disabled = true;
+		    	document.getElementById("btn6").disabled = true;
+		    	document.getElementById("btn7").disabled = true;
+		    	document.getElementById("btn8").disabled = true;
+		    	document.getElementById("btn9").disabled = true;
+		    	document.getElementById("btn0").disabled = true;
+		    	document.getElementById("btnComa").disabled = true;
+		    	document.getElementById("btnSum").disabled = true;
+		    	document.getElementById("btnRest").disabled = true;
+		    	document.getElementById("btnMult").disabled = true;
+		    	document.getElementById("btnDiv").disabled = true;
+		    	document.getElementById("avanzada").disabled = true;
+		    	document.getElementById("boton_conversor").disabled = true;
+		    	document.getElementById("btnIgual").disabled = true;
+		    	document.getElementById("btnDel").disabled = true;
+		    	document.getElementById("btnce").disabled = true;
+		    	document.getElementById("pantalla").disabled = true;
+			
+				flag2=1; // Aqui le decimos que ahora flag2 vale 1
+							
+			} else {
+
+				document.getElementById("btn1").disabled = false;
+		    	document.getElementById("btn2").disabled = false;
+		    	document.getElementById("btn3").disabled = false;
+		    	document.getElementById("btn4").disabled = false;
+		    	document.getElementById("btn5").disabled = false;
+		    	document.getElementById("btn6").disabled = false;
+		    	document.getElementById("btn7").disabled = false;
+		    	document.getElementById("btn8").disabled = false;
+		    	document.getElementById("btn9").disabled = false;
+		    	document.getElementById("btn0").disabled = false;
+		    	document.getElementById("btnComa").disabled = false;
+		    	document.getElementById("btnSum").disabled = false;
+		    	document.getElementById("btnRest").disabled = false;
+		    	document.getElementById("btnMult").disabled = false;
+		    	document.getElementById("btnDiv").disabled = false;
+		    	document.getElementById("avanzada").disabled = false;
+		    	document.getElementById("boton_conversor").disabled = false;
+		    	document.getElementById("btnIgual").disabled = false;
+		    	document.getElementById("btnDel").disabled = false;
+		    	document.getElementById("btnce").disabled = false;
+		    	document.getElementById("pantalla").disabled = false;
+		    	flag2=0; // Aqui le decimos que que ahora flag2 vale 0
+				
+			}
+		}
+
+		 
+		
+		
+
+		
+
+	/*
+
+<!--//Para desactivar los botones cuando la calculadora esta apagada
 
 		//Creo una variable que inicializo en cero
 		var contador=0;
@@ -461,50 +536,9 @@
 		    	document.getElementById("pantalla").disabled = true;
 
 		    }
-
-
 		}
 
-		// Para encender pantalla al abrir la pagina el cual llama al metodo encender()
-		function encenderInicio() {
-		  
-		   setTimeout("encender()",1000); // Llama a la funcion encender 1 sg despues de abrir la pagina, por eso en body ponemos <body onload="encender()"
-		   setTimeout("cambia_imagen()",1000) // Llama a la funcion cambia_imagen 1 sg despues de abrir la pagina, por tanto en body onload="cambia_imagen()"
 
-		}
-
-	/*
-
-<!--
-
-	/*
-		// Aqui le he puesto un toFixed para limitar los decimales a 2 (igual tengo que poner a más?? 
-		function euro() {
-			document.getElementById('pantalla').value = document.getElementById('pantalla').value.toFixed(2) + " €";
-		}
-
-		function libra() {
-			document.getElementById('pantalla').value = document.getElementById('pantalla').value * 0.88.toFixed(2) + " £";
-		}
-
-		function dolar() {
-			document.getElementById('pantalla').value = document.getElementById('pantalla').value * 1.13.toFixed(2) + " $";
-		}
-
-		function dolarM() {
-			document.getElementById('pantalla').value = document.getElementById('pantalla').value * 21.82.toFixed(2) + " $X";
-		}
-
-		function yenes() {
-			document.getElementById('pantalla').value = document.getElementById('pantalla').value * 125.24.toFixed(2) + " Y";
-
-		}
-
-		function dolarC() {
-			document.getElementById('pantalla').value = document.getElementById('pantalla').value * 1.5.toFixed(2)  + " $C";
-		}
-
-*/
 /*
 		// Decimal a binario
 
@@ -608,20 +642,7 @@ var numero1 = 0; // creo variable que recoge el primer valor
 var numero2 = 0; // creo variable que recoge el segundo valor
 var operacion; // Variable que recoge el valor para que operacion realizar
 
-//cuando se apreta un numero, esta funcion lo recibe.
 
-// La variable numero tiene el valor que le asignamos a cada tecla, para la tecla 1, será 1
-// la variable numero1 recoge el valor 	que haya ne la pantalla, si es igual a cero, o si no hay nada escrito (osea cero tambien), entonces numero1 es igual al valor introducido
-// sino numero1 será igual a numero1+numero
-function asignarNumero(numero){
-    if(document.getElementById("pantalla").value == "0" || numero1==0){
-        numero1 = numero; // La variable numero tiene el valor que le asignamos a cada tecla, para la tecla 1, será 1
-    }else{
-        numero1 += numero;
-    }
-        document.getElementById("pantalla").value = numero1;
-
-}
 
  function coma(){
             if(numero1 == 0) {
@@ -634,15 +655,6 @@ function asignarNumero(numero){
 
 
 
-//Esta funcion se llama cada vez que se presiona un boton de operacion.
-function operar(valor){
-	if (numero1 == 0){
-		resultado = parseInt(document.getElementById("pantalla").value);
-	}
-	numero2 = parseInt(numero1);
-	numero1= 0;
-	operacion = valor;
-}
 
 function esIgual(){
     numero1 = parseInt(numero1);

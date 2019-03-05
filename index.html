@@ -15,7 +15,7 @@
 
 </head>
 
-<body onload=limpiar(),encenderInicio()> <!-- Aqui pongo que al cargar la pagina llame a la funcion limpiar para que borre lo que haya en pantalla-->
+<body onload="limpiar(),booleanOnOff()"> 
 
 	<div class="container">
 
@@ -172,7 +172,7 @@
 				
 						<br>
 
-						<input type="button" id="btn1" class="btn" name="1" value="1" onclick="introducirNumero(1)">
+						<input type="button" id="btn1" class="btn nada" name="1" value="1" onclick="introducirNumero(1)">
 						<input type="button" id="btn2" class="btn" name="2" value="2" onclick="introducirNumero(2)">
 						<input type="button" id="btn3" class="btn" name="3" value="3" onclick="introducirNumero(3)">
 						<input type="button" id="btnRest"class="btn" name="-" value="-" onclick="introducirNumero('-')">
@@ -190,7 +190,7 @@
 
 					<!-- Boton de encendido y apagado -->
 
-					<img id="boton_on" class="boton_on_off" alt="" src="imagenes/botonOff.png" onmouseover="style.cursor='pointer'" onclick="cambia_imagen(),encender(),contadorOnOff()"/>			
+					<img id="boton_on" class="boton_on_off" alt="" src="imagenes/botonOff.png" onmouseover="style.cursor='pointer'" onclick="cambia_imagen(),encender(),booleanOnOff()"/>			
 
 
 					<br>
